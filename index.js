@@ -29,10 +29,10 @@ function processListEvents() {
     // .shopping-item__checked class to the span element in the parent list item
     // using event delegation
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-        //console.log($(this).closest('.shopping-item'));
         $(this).parents('li').find('.shopping-item').toggleClass('shopping-item__checked');
         // WHY DOESN'T THIS WORK?
         // Closest finds nothing, returning a jQuery object with a prevObject only
+        // Same if you try to get the .closest('li')
         //$(this).closest('.shopping-item').toggleClass('shopping-item__checked');
     });
 
