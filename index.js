@@ -28,9 +28,15 @@ function processListEvents() {
     // Handle check button events on the individual list items, applying the
     // .shopping-item__checked class to the span element in the parent list item
     // using event delegation
-
+    // $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    //     console.log(this);
+    //     $(this).closest('span').toggleClass('shopping-item__checked');
+    // });
     // Handle delete button events on the list items, using .remove() to remove
     // the parent list item using event delegation
+    $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+        $(this).closest('li').remove();
+    });
 }
 
 $(processListEvents);
